@@ -20,7 +20,7 @@ const Footer = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3000/subscribe", { email });
+      await axios.post("https://www.api.sjacarecenter.com/subscribe", { email });
       setSubscribeSuccess("Email subscribed successfully!");
       setSubscribeError("");
       setEmail("");
