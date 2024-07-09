@@ -29,7 +29,7 @@ const Getintouch = () => {
 
     try {
         const response = await axios.post(
-            "http://localhost:3000/save-email",
+            "https://www.api.sjacarecenter.com/save-email",
             formData
         );
         if (response.status === 200) {
