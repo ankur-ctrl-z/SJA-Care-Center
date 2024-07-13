@@ -6,9 +6,8 @@ dotenv.config();
 const connectDB = async function() {
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            // useNewUrlParser: true,
-            // useUnifiedTopology: true,
-            // useCreateIndex: true
+            useNewUrlParser: true,
+            useUnifiedTopology: true
         });
         console.log('DATABASE CONNECTED');
     } catch (error) {
@@ -17,50 +16,40 @@ const connectDB = async function() {
     }
 };
 
-
 const InputSchema = new mongoose.Schema({
-    // NAME
     name: {
         type: String,
         required: true
     },
-
-    // EMAIL
-    email: {
-        type: String,
+    phone: {
+        type: Number,
         required: true,
-        unique: true,
-        lowercase: true,
-        trim: true
+        unique: true
     },
-
-    // Services
     services: {
         type: String,
         required: true
     },
-
-    // CREATED AT
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
+
 const SubscriptionEmailSchema = new mongoose.Schema({
     email: {
-      type: String,
-      required: true,
-      unique: true 
+        type: String,
+        required: true,
+        unique: true 
     },
     subscribedAt: {
-      type: Date,
-      default: Date.now
+        type: Date,
+        default: Date.now
     }
-  });
-
+});
 
 const InputModelSJA = mongoose.model('InputModelSJA', InputSchema);
 const SubscriptionEmailModel = mongoose.model('SubscriptionEmailModel', SubscriptionEmailSchema);
 
+module.exports = { connectDB, InputModelSJA, SubscriptionEmailModel };
 
-module.exports = { connectDB, InputModelSJA, SubscriptionEmailModel };

@@ -8,7 +8,7 @@ import "../Styles/Getintouch.css";
 const Getintouch2 = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     services: "",
   });
 
@@ -24,40 +24,53 @@ const Getintouch2 = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();  // Prevent default form submission
+
+    console.log("Form submitted");  // Debugging log
+
+    // Convert phone to number
+    const dataToSend = {
+      ...formData,
+      phone: parseInt(formData.phone, 10),
+    };
 
     try {
-        const response = await axios.post(
-            "https://www.api.sjacarecenter.com/save-email",
-            formData
-        );
-        if (response.status === 200) {
-            setSuccess("Form submitted successfully!");
-            setError("");
-            setFormData({ name: "", email: "", services: "" });
-        } else {
-            setError("Error submitting form. Please try again.");
-            setSuccess("");
-        }
-    } catch (error) {
-        if (error.response && error.response.data && error.response.data.error) {
-            setError(error.response.data.error);
-        } else {
-            setError("Error submitting form. Please try again.");
-        }
+      const response = await axios.post(
+        "http://localhost:3000/save-email",
+        dataToSend
+      );
+      if (response.status === 200) {
+        setSuccess("Form submitted successfully!");
+        setError("");
+        setFormData({ name: "", phone: "", services: "" });
+        console.log("Success response:", response.data);  // Debugging log
+      } else {
+        setError("Error submitting form. Please try again.");
         setSuccess("");
-    }
-};
-
-useEffect(() => {
-  if (success || error) {
-    const timer = setTimeout(() => {
+        console.log("Error response:", response);  // Debugging log
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.error) {
+        setError(error.response.data.error);
+        console.log("Validation error:", error.response.data.error);  // Debugging log
+      } else {
+        setError("Error submitting form. Please try again.");
+        console.log("Catch error:", error);  // Debugging log
+      }
       setSuccess("");
-      setError("");
-    }, 3000);
-    return () => clearTimeout(timer);
-  }
-}, [success, error]);
+    }
+  };
+
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess("");
+        setError("");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
+
 
   return (
     <div className="flex ml-2 mr-2 justify-center mb-32 items-center overflow-hidden mt-[8rem] md:mt-[10rem] lg:mt-[10rem]">
@@ -95,10 +108,10 @@ useEffect(() => {
               </div>
               <div className="flex justify-center">
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
+                  type="number"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-[16rem] md:w-[14rem] lg:w-[23rem] ml-2 p-4 rounded-3xl hover:border-red-600 border-2 border-black card-color focus:outline-none"
                   required
@@ -170,7 +183,7 @@ useEffect(() => {
                 </div>
               </div>
 
-              <div className="w-[9rem] h-[21rem]  md:h-[24rem] rounded-r-xl rounded-t-xl rounded-tr-xl bg-orange-600 ml-[12.4rem] md:ml-[17rem] lg:ml-[20rem] -mt-[17.5rem] md:-mt-[21rem]"></div>
+              <div className="w-[9rem] h-[21rem] md:h-[24rem] rounded-r-xl rounded-t-xl rounded-tr-xl bg-orange-600 ml-[12.4rem] md:ml-[17rem] lg:ml-[20rem] -mt-[17.5rem] md:-mt-[21rem]"></div>
 
               {/* social media icons */}
               <div className="bgcolor w-40 rounded-r-lg rounded-l-lg text-white flex items-end ml-[13rem] md:ml-[18rem] lg:ml-[21rem] -mt-10 relative">

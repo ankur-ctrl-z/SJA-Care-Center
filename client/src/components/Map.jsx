@@ -1,8 +1,8 @@
 import React from "react";
 
 const Map = () => {
-  const latitude = 19.29812680165292;
-  const longitude = 72.86054369908562;
+  const latitude = 19.298677;
+  const longitude = 72.854899;
 
   return (
     <div className="min-h-screen flex justify-center items-center -mt-20 ml-2 mr-2">

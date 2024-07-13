@@ -9,7 +9,7 @@ import "../Styles/Getintouch.css";
 const Getintouch = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     services: "",
   });
 
@@ -25,46 +25,56 @@ const Getintouch = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();  // Prevent default form submission
+
+    console.log("Form submitted");  // Debugging log
+
+    // Convert phone to number
+    const dataToSend = {
+      ...formData,
+      phone: parseInt(formData.phone, 10),
+    };
 
     try {
-        const response = await axios.post(
-            "https://www.api.sjacarecenter.com/save-email",
-            formData
-        );
-        if (response.status === 200) {
-            setSuccess("Form submitted successfully!");
-            setError("");
-            setFormData({ name: "", email: "", services: "" });
-        } else {
-            setError("Error submitting form. Please try again.");
-            setSuccess("");
-        }
-    } catch (error) {
-        if (error.response && error.response.data && error.response.data.error) {
-            setError(error.response.data.error);
-        } else {
-            setError("Error submitting form. Please try again.");
-        }
+      const response = await axios.post(
+        "http://localhost:3000/save-email",
+        dataToSend
+      );
+      if (response.status === 200) {
+        setSuccess("Form submitted successfully!");
+        setError("");
+        setFormData({ name: "", phone: "", services: "" });
+        console.log("Success response:", response.data);  // Debugging log
+      } else {
+        setError("Error submitting form. Please try again.");
         setSuccess("");
-    }
-};
-
-useEffect(() => {
-  if (success || error) {
-    const timer = setTimeout(() => {
+        console.log("Error response:", response);  // Debugging log
+      }
+    } catch (error) {
+      if (error.response && error.response.data && error.response.data.error) {
+        setError(error.response.data.error);
+        console.log("Validation error:", error.response.data.error);  // Debugging log
+      } else {
+        setError("Error submitting form. Please try again.");
+        console.log("Catch error:", error);  // Debugging log
+      }
       setSuccess("");
-      setError("");
-    }, 3000);
-    return () => clearTimeout(timer);
-  }
-}, [success, error]);
+    }
+  };
 
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess("");
+        setError("");
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
 
   return (
     <div className="flex ml-2 mr-2 justify-center items-center overflow-hidden md:mt-12 lg:mt-14">
       <div className="card-getintouch w-full border-2 border-black rounded-xl ">
-      
         {/* Contact Form */}
         <div className=" ">
           <h2 className="text-center m-5 font-bold text-2xl sm:text-3xl">
@@ -75,13 +85,10 @@ useEffect(() => {
           </p>
 
           <div className="flex flex-col-reverse md:justify-between md:flex-row mt-5">
-
-         
             <form
               className="space-y-4 mt-5 sm:ml-[7rem]"
               onSubmit={handleSubmit}
             >
-
               {error && <p className="text-red-500 text-center mt-2">{error}</p>}
               {success && (
                 <p className="text-green-500 text-center mt-4">{success}</p>
@@ -100,10 +107,10 @@ useEffect(() => {
               </div>
               <div className="flex justify-center">
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
+                  type="number"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-[16rem] md:w-[14rem] lg:w-[23rem] ml-2 p-4 rounded-3xl hover:border-red-600 border-2 border-black card-color focus:outline-none"
                   required
@@ -128,7 +135,6 @@ useEffect(() => {
                 </button>
               </div>
             </form>
-           
 
             {/* Contact Info */}
             <div className="mt-5 mr-0 ">
@@ -214,3 +220,4 @@ useEffect(() => {
 };
 
 export default Getintouch;
+

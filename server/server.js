@@ -14,7 +14,12 @@ app.use(express.json());
 
 const InputSchema = z.object({
     name: z.string().min(1, 'Name is required'),
-    email: z.string().email('Invalid email address'),
+    phone: z.number().int().refine((val) => {
+        const phoneStr = val.toString();
+        return phoneStr.length === 10;
+    }, {
+        message: 'Invalid phone number'
+    }),
     services: z.string().min(1, 'Services are required')
 });
 
@@ -23,13 +28,13 @@ const SubscriptionSchema = z.object({
 });
 
 // Middleware for duplicate email check
-async function checkDuplicateEmail(req, res, next) {
-    const { email } = req.body;
+async function checkDuplicatePhone(req, res, next) {
+    const { phone } = req.body;
     try {
-        const existingEmail = await InputModelSJA.findOne({ email });
-        if (existingEmail) {
+        const existingPhone = await InputModelSJA.findOne({ phone });
+        if (existingPhone) {
             return res.status(400).json({
-                error: 'Email already exists'
+                error: 'Phone number already exists'
             });
         }
         next();
@@ -41,7 +46,7 @@ async function checkDuplicateEmail(req, res, next) {
 connectDB();
 
 // Route to handle form submission and save email
-app.post('/save-email', checkDuplicateEmail, async (req, res) => {
+app.post('/save-email', checkDuplicatePhone, async (req, res) => {
     try {
         const validatedData = InputSchema.parse(req.body); // Validate data using Zod schema
         const formData = new InputModelSJA(validatedData);
