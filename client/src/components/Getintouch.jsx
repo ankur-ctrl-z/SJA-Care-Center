@@ -37,7 +37,7 @@ const Getintouch = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/save-email",
+        "https://api.sjacarecenter.com/save-email",
         dataToSend
       );
       if (response.status === 200) {
