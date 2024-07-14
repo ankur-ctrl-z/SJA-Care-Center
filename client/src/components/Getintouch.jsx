@@ -119,7 +119,7 @@ const Getintouch = () => {
               <div className="flex justify-center">
                 <input
                   name="services"
-                  placeholder="Services"
+                  placeholder="Treatment"
                   value={formData.services}
                   onChange={handleChange}
                   className="w-[16rem] md:w-[14rem] lg:w-[23rem] ml-2 h-30 p-4 rounded-3xl hover:border-red-600 border-2 border-black card-color focus:outline-none"
