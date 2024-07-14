@@ -1,5 +1,5 @@
 import React from "react";
-import KneePainImage from "../../assets/Chiropractic-Treatment/Knee-Pain.avif";
+import KneePainImage from "../../assets/Chiropractic-Treatment/Knee-Pain.jpg";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 

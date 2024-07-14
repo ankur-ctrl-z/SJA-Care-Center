@@ -14,7 +14,7 @@ import FrozenShoulder from "../assets/Chiropractic-Treatment/Frozen-Shoulder.jpg
 import Headache from "../assets/Chiropractic-Treatment/Headache.jpg";
 import HeelPain from "../assets/Chiropractic-Treatment/heel pain1.jpg";
 import HerniatedDisc from "../assets/Chiropractic-Treatment/herniated disc.jpg";
-import KneePain from "../assets/Chiropractic-Treatment/Knee-Pain.avif";
+import KneePain from "../assets/Chiropractic-Treatment/Knee-Pain.jpg";
 import Lordosis from "../assets/Chiropractic-Treatment/lordosis1.jpg";
 import LumbarSpondylosis from "../assets/Chiropractic-Treatment/Lumbar-Spondylosis.png";
 import Migraine from "../assets/Chiropractic-Treatment/Migraine.jpg";
@@ -156,7 +156,7 @@ const ChiropraticTreatment = () => {
               </div>
               <div>
                 <h1 className="font-semibold flex justify-center text-2xl tracking-wide mt-1">
-                  Sciatica
+                Sciatica Pain
                 </h1>
               </div>
 

@@ -13,7 +13,7 @@ import PanchakarmaMassage from "../assets/Massage-Therapy/Panchakarma-Massage.jp
 import { Link } from "react-router-dom";
 import LeachTherepy from "../assets/Alternative-Therapy/leech threapy.png";
 import bloodcupping from "../assets/Alternative-Therapy/Blood Cupping.jpg";
-import AltetnateTherapy from '../assets/Alternative-Therapy/AlternativeThreapy.jpg'
+import AltetnateTherapy from '../assets/Alternative-Therapy/Hot-Cupping.jpg'
 import sciatic from '../assets/Chiropractic-Treatment/sciatic.jpg'
 const Services = () => {
   return (
