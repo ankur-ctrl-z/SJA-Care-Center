@@ -1,10 +1,9 @@
 import React from "react";
-// import Navbar from "./Navbar";
-// import Footer from "./Footer";
 import "../Styles/Services.css";
 import image9 from "../assets/image9.jpg";
 import image11 from "../assets/image11.webp";
 import "../Styles/GalleryCSS.css";
+
 
 const GalleryMain = () => {
   return (

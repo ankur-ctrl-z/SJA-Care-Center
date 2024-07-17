@@ -60,6 +60,7 @@ const Footer = () => {
               type="email"
               placeholder="Enter Your Email Address"
               value={email}
+              required
               onChange={handleEmailChange}
               className="text-white bg-transparent border border-white px-2 py-1 rounded-md"
             />
@@ -115,7 +116,7 @@ const Footer = () => {
                 <p className="text-xl md:text-2xl mb-2 ">Address</p>
                 
                 <li>Clinic No. 01,</li>
-                <li>Shree Trade Center , Mira Bhayandar Road Near Reliance Energy (Bhayandar Phatak)  Bhayander (East) Thane, Maharashtra - 401105</li>
+                <li>Shree Trade Center , Mira Bhayandar Road Near Reliance Energy Office (Bhayandar Phatak)  Bhayander (East) Thane, Maharashtra - 401105</li>
                 {/* <li>contact- 9967521331</li> */}
               
             </ul>

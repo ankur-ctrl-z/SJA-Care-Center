@@ -1,11 +1,11 @@
 import React from "react";
 
 const Map = () => {
-  const latitude = 19.298677;
-  const longitude = 72.854899;
+  const latitude = 19.298660991467276;
+  const longitude = 72.85487670427474;
 
   return (
-    <div className="min-h-screen flex justify-center items-center -mt-20 ml-2 mr-2">
+    <div className="min-h-screen flex justify-center items-center -mt-20 ml-2 mr-2 2xl:-mt-[28rem] 2xl:-mb-[28rem]">
       <div className="w-full max-w-screen-lg h-96 border-2 border-black bg-slate-200 text-gray-600 body-font px-5 py-5 sm:py-24 rounded-lg overflow-hidden flex items-end justify-start relative">
         <iframe
           width="100%"

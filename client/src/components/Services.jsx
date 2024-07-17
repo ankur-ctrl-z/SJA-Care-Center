@@ -17,7 +17,7 @@ import AltetnateTherapy from '../assets/Alternative-Therapy/Hot-Cupping.jpg'
 import sciatic from '../assets/Chiropractic-Treatment/sciatic.jpg'
 const Services = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-[8rem] md:mt-[6rem] lg:mt-[13rem] xl:mt-[26rem] ">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-[8rem] md:mt-[6rem] lg:mt-[13rem] xl:mt-[24rem] 2xl:mt-[58rem]">
       <div className="text-center font-semibold text-[23px] md:text-4xl mt-2 pt-12">
         <h1 className="service text-center font-sans">
         Treatments <span>&mdash;&mdash;</span>

@@ -3,10 +3,13 @@ import "../Styles/Services.css";
 import "../Styles/GalleryCSS.css";
 import image9 from "../assets/gallary-21.jpg";
 import image10 from "../assets/gallary22.jpg";
-// import image11 from "../assets/gallry23.jpg";
-import image11 from '../assets/image23.jpg'
+import image11 from "../assets/image23.jpg";
 import image12 from "../assets/gallary24.jpg";
 import image13 from "../assets/gallary25.jpg";
+import image14 from "../assets/SJA Care Center.jpg";
+import image15 from "../assets/No medicines.jpg";
+import image16 from "../assets/No injections.jpg";
+import image17 from "../assets/Author.jpg";
 
 const Gallery2 = () => {
   return (
@@ -18,21 +21,55 @@ const Gallery2 = () => {
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center mt-10 w-full ">
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            <img src={image9} className="w-full md:w-[18rem] md:h-[18rem] lg:w-[22rem] lg:h-[20rem] m-1" alt="image 9" />
-            <img src={image10} className="w-full md:w-[18rem] md:h-[18rem] lg:w-[22rem] lg:h-[20rem] m-1" alt="image 10" />
-            <img src={image11} className="w-full md:w-[20rem] md:h-[18rem] lg:w-[22rem] lg:h-[20rem] m-1" alt="image 11" />
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-center  mb-24 flex-wrap mr-1 items-center">
-          <img src={image12} className="w-fullmd:w-[20rem] md:h-[18rem] lg:w-[22rem] lg:h-[20rem] m-1" alt="image 12" />
-          <img src={image13} className="w-fullmd:w-[20rem] md:h-[18rem] lg:w-[22rem] lg:h-[20rem] m-1" alt="image 13" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 flex-wrap sm:flex justify-center mt-10 mb-24 w-full ">
+          <img
+            src={image9}
+            className="w-full md:w-[18rem] md:h-[18rem]  lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 9"
+          />
+          <img
+            src={image10}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 10"
+          />
+          <img
+            src={image11}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 11"
+          />
+          <img
+            src={image12}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 12"
+          />
+          <img
+            src={image13}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 13"
+          />
+          <img
+            src={image14}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 14"
+          />
+          <img
+            src={image15}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 15"
+          />
+          <img
+            src={image16}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 16"
+          />
+          <img
+            src={image17}
+            className="w-full md:w-[18rem] md:h-[18rem] lg:w-[18rem] lg:h-[20rem] xl:w-[22rem] 2xl:w-[24rem] m-1"
+            alt="image 17"
+          />
         </div>
       </div>
     </div>
-
   );
 };
 
