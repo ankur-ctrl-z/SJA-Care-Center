@@ -60,10 +60,10 @@ function App() {
   
     <Routes>
       <Route path="/" element={ <Homepage />} />
-      <Route path="/about" element={ <Aboutus2 />} />
+      <Route path="/aboutus" element={ <Aboutus2 />} />
       {/* <Route path="/cards" element={ <Cards/>} /> */}
       <Route path="/gallery" element={ <Gallery2 />} />
-      <Route path="/contact" element={ <Getintouch2 />} />
+      <Route path="/contactus" element={ <Getintouch2 />} />
       <Route path="/services" element={ <Services2 />} />
       <Route path="/map" element={ <Map />} />
       <Route path="/services/chiropractic-treatment" element={ <ChiropraticTreatment /> } />
