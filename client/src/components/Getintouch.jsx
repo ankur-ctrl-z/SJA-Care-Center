@@ -27,8 +27,6 @@ const Getintouch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();  // Prevent default form submission
 
-    console.log("Form submitted");  // Debugging log
-
     // Convert phone to number
     const dataToSend = {
       ...formData,
@@ -44,19 +42,17 @@ const Getintouch = () => {
         setSuccess("Form submitted successfully!");
         setError("");
         setFormData({ name: "", phone: "", services: "" });
-        console.log("Success response:", response.data);  // Debugging log
       } else {
         setError("Error submitting form. Please try again.");
         setSuccess("");
-        console.log("Error response:", response);  // Debugging log
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
         setError(error.response.data.error);
-        console.log("Validation error:", error.response.data.error);  // Debugging log
+        console.log("Validation error:", error.response.data.error);
       } else {
         setError("Error submitting form. Please try again.");
-        console.log("Catch error:", error);  // Debugging log
+        console.log("Catch error:", error);
       }
       setSuccess("");
     }

@@ -6,8 +6,8 @@ dotenv.config();
 const connectDB = async function() {
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true
         });
         console.log('DATABASE CONNECTED');
     } catch (error) {
@@ -24,7 +24,6 @@ const InputSchema = new mongoose.Schema({
     phone: {
         type: Number,
         required: true,
-        unique: true
     },
     services: {
         type: String,
