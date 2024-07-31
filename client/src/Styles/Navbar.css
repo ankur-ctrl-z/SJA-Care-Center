@@ -1,0 +1,32 @@
+/* .font-color {
+  color: #b4232a !important;
+}
+
+.header-bgcolor {
+  background-color: #eee9e9;
+}
+
+.navbar {
+  background-color: #eee9e9;
+  border-radius: 60px;
+}
+
+.logo {
+  height: 77px;
+  border-radius: 60px;
+}
+
+.contactus-button {
+  background-color: #b42329 !important;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 767px) and (max-width: 876px) {
+  .navbar {
+    margin-top: 18px !important;
+  }
+} */
