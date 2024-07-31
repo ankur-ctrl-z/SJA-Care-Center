@@ -1,7 +1,8 @@
+import React from 'react';
 import ChiropraticTreatment from "./components/ChiropraticTreatment";
 import MassageTherapy from "./components/MassageTherapy";
 import AlternateTherapy from "./components/AlternativeTherapy";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
@@ -54,11 +55,18 @@ import Getintouch2 from "./components/GetInTouch2";
 import Cards from "./components/Cards";
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate('/contactus');
+    setTimeout(() => {
+      document.getElementById('appointment-section').scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
   return (
    <div className="w-full overflow-hidden">
-    <Navbar/>
-  
-    <Routes>
+    <Navbar onContactUsClick={handleContactUsClick}/>
+  <Routes>
       <Route path="/" element={ <Homepage />} />
       <Route path="/aboutus" element={ <Aboutus2 />} />
       {/* <Route path="/cards" element={ <Cards/>} /> */}
@@ -69,6 +77,7 @@ function App() {
       <Route path="/services/chiropractic-treatment" element={ <ChiropraticTreatment /> } />
       <Route path="/services/massage-therapy" element={ <MassageTherapy />} />
       <Route path="/services/alternative-therapy" element={ <AlternateTherapy />} />
+      <Route path="/book-appointment" element={<AppointmentBooking />} />
 
       {/* Chiropractic Treatment sub-components */}
         <Route path="/services/chiropractic-treatment/ankle-pain" element={<AnklePain />} />
