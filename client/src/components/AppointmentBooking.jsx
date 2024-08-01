@@ -3,9 +3,9 @@ import { InlineWidget } from 'react-calendly';
 
 const AppointmentBooking = () => {
   return (
-    <div id="appointment-section" style={{ height: '100vh' , padding: '20px'}}>
+    <div id="appointment-section" className='mt-20 mb-10 example' style={{ height: '100vh' , padding: '20px'}}>
       <h1>Book an Appointment</h1>
-      <InlineWidget url="https://calendly.com/ankur143513/30min" />
+      <InlineWidget url="https://calendly.com/spinejoint-mumbai/45min" />
     </div>
   );
 };

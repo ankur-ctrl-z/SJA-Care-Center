@@ -33,7 +33,7 @@ const Aboutus2 = () => {
             </p>
           </div>
           <div className="flex justify-center md:justify-start mb-[18rem]">
-            <Link to="/contactus" smooth={true} duration={500}>
+            <Link to="/book-appointment" smooth={true} duration={500}>
               <button className="bg-orange-600 hover:bg-orange-800 font-semibold text-lg mt-5 hover:shadow-md transition h-14 sm:h-8 px-3 sm:px-4 hover:bg-red md:h-14 md:px-6 tracking-wide text-white sm:text-xs md:text-base lg:text-lg rounded-3xl">
                 Book an Appointment<i className="fas fa-location-arrow p-2 "></i>
               </button>
@@ -46,3 +46,4 @@ const Aboutus2 = () => {
 };
 
 export default Aboutus2;
+

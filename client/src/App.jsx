@@ -47,12 +47,13 @@ import Vertigo from "./sub-components/Chiropractic-Treatment/Vertigo";
 import TennisElbow from "./sub-components/Chiropractic-Treatment/TennisElbow";
 import CervicalSpondylosis from "./sub-components/Chiropractic-Treatment/CervicalSpondylosis";
 import SlippedDisc from "./sub-components/Chiropractic-Treatment/SlippedDisc";
+import AppointmentBooking from './components/AppointmentBooking';
 
 import Aboutus2 from  './components/Aboutus2'
 import Services2 from './components/Services2';
 import Gallery2 from "./components/Gallary2";
 import Getintouch2 from "./components/GetInTouch2";
-import Cards from "./components/Cards";
+// import Cards from "./components/Cards";
 
 function App() {
   const navigate = useNavigate();
@@ -69,7 +70,6 @@ function App() {
   <Routes>
       <Route path="/" element={ <Homepage />} />
       <Route path="/aboutus" element={ <Aboutus2 />} />
-      {/* <Route path="/cards" element={ <Cards/>} /> */}
       <Route path="/gallery" element={ <Gallery2 />} />
       <Route path="/contactus" element={ <Getintouch2 />} />
       <Route path="/services" element={ <Services2 />} />
