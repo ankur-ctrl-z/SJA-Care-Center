@@ -6,7 +6,7 @@ Welcome to the SJA Care Center website repository! This project was developed to
 2: User-Friendly Interface: The website is designed for easy navigation, helping users quickly find the services they need.     
 3: Responsive Design: Ensures a seamless experience across all devices, from desktops to smartphones.         
 
-## Tech Stack
+## Tech Stack 
 
 ### Frontend:
 . React.js: For building a dynamic and responsive user interface.
