@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); 
 const { connectDB, InputModelSJA, SubscriptionEmailModel } = require('./db.js');
 const cors = require('cors');
 const { z } = require('zod');
