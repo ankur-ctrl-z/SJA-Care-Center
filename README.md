@@ -55,10 +55,13 @@ The website aims to inform, engage, and enable visitors to explore and connect w
 🔁 Git – Version control and collaboration  
 ```
 ---
+
 ## 📝 License
 
-📂 This project is public and open for viewing and learning.  
-🤝 For collaboration or questions, feel free to reach out directly.  
+```
+📂 This project is open-source and publicly available for learning and reference.  
+💬 For questions or suggestions, feel free to reach out directly.  
+```
 ---
 
 
