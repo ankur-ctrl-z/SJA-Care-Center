@@ -54,7 +54,10 @@ The website aims to inform, engage, and enable visitors to explore and connect w
 🌐 NGINX – Reverse proxy server (if applicable)  
 🔁 Git – Version control and collaboration  
 ```
+## 📝 License
 
+📂 This project is public and open for viewing and learning.  
+🤝 For collaboration or questions, feel free to reach out directly.  
 ---
 
 
